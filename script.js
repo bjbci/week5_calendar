@@ -1,38 +1,27 @@
-area09=document.getElementById('area09')
+var area09= $('#area09')
 console.log(area09)
-area10=document.getElementById('area10')
+var area10=$('#area10')
 console.log(area10)
-area11=document.getElementById('area11')
+var area11=$('#area11')
 console.log(area11)
-area12=document.getElementById('area12')
+var area12=$('#area12')
 console.log(area12)
-area13=document.getElementById('area13')
+var area13=$('#area13')
 console.log(area13)
-area14=document.getElementById('area14')
+var area14=$('#area14')
 console.log(area14)
-area15=document.getElementById('area15')
+var area15=$('#area15')
 console.log(area15)
-area16=document.getElementById('area16')
+var area16=$('#area16')
 console.log(area16)
-area17=document.getElementById('area17')
+var area17=$('#area17')
 console.log(area17)
-inputAreas=document.querySelectorAll('.form-control')
+var inputAreas=$('.form-control')
 console.log(inputAreas)
 // addButton=document.getElementsByClassName("btn")
 // console.log(addButton)
 let calendarTime
 let listInput
-
-// addButton.addEventListener('click',function(event){
-//     console.log(event)
-// })
-
-// practiceButton=document.getElementById('button-addon2')
-// console.log(practiceButton)
-
-// practiceButton.addEventListener('click',function(event){
-//     console.log(event)
-// })
 
 
 
@@ -40,25 +29,36 @@ var momentTime= moment().format("dddd MMM Do");
 //console.log(moment())
 console.log(momentTime)
 
-var currentDay=document.getElementById("currentDay")
+var momentHour=moment().format('k')
+console.log(momentHour)
 
-var currentTime = new Date();
-currentTime.getHours();
+// var currentDay=document.getElementById("currentDay")
 
-console.log(currentTime)
-console.log(currentDay)
+// var currentTime = new Date();
+// currentTimeHours=currentTime.getHours();
+// console.log(currentTimeHours)
+
+
+// console.log(currentTime)
+// console.log(currentDay)
 
 currentDay.textContent=momentTime
 
-if (currentTime==calendarTime){
+if (momentHour>25){
+    console.log('over 25')
+}else{
+    console.log('under25')
+}
+
+if (momentHour==calendarTime){
     console.log('time is now')
-     inputAreas.setAttribute("style","background-color:beige")
-}else if (currentTime < calendarTime){
+     inputAreas.attr("style","background-color:beige")
+}else if (momentHour < calendarTime){
     console.log('time has passed')
-    inputAreas.setAttribute("style","background-color:red")
-}else if (currentTime > calendarTime){
-    ('the futrue is coming')
-    inputAreas.setAttribute("style","background-color:teal")
+    inputAreas.attr("style","background-color:red")
+}else {
+    console.log('the futrue is coming')
+    inputAreas.attr("style","background-color:teal")
 }
   
 // }else if (currentTime >= 12 && currentTime<13){
