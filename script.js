@@ -23,83 +23,126 @@ console.log(inputAreas)
 let calendarTime
 let listInput
 
-
-
 var momentTime= moment().format("dddd MMM Do");
-//console.log(moment())
 console.log(momentTime)
 
 var momentHour=moment().format('k')
 console.log(momentHour)
 
-
-
 currentDay.textContent=momentTime
 
-if (momentHour>25){
-    console.log('over 25')
-}else{
-    console.log('under25')
+// console.log(area09[0].name)//.attributes.nodeValue
+// console.log(area10[0].name)
+//console.log(input[0].name)
+
+var inputs=$('input')
+console.log(inputs)
+console.log(inputs.val())
+
+
+// allInputs=inputs.name
+// console.log(allInputs)
+
+for (let i=0; i<9;i++){
+    console.log(inputAreas[i].name)
+    calendarTime=inputAreas[i].name
+    console.log(calendarTime)
+
+    if (momentHour==calendarTime){
+        console.log('time is now')
+        inputAreas.attr("style","background-color:beige")
+    }else if (momentHour > calendarTime){
+        console.log('time has passed')
+        inputAreas.attr("style","background-color:red")
+    }else {
+        console.log('the futrue is coming')
+        inputAreas.attr("style","background-color:teal")
+    }
+
 }
 
-if (momentHour==calendarTime){
-    console.log('time is now')
-     inputAreas.attr("style","background-color:beige")
-}else if (momentHour > calendarTime){
-    console.log('time has passed')
-    inputAreas.attr("style","background-color:red")
-}else {
-    console.log('the futrue is coming')
-    inputAreas.attr("style","background-color:teal")
-}
-  
+// $.each(inputs,function(){
+//     console.log($(this).val())
+//     allInputs=$(this).val().name
+//     console.log(allInputs)
+    
+// })
+
 
 var btn09=$('#btn09')
 console.log(btn09)
 
-btn09.click(function(){
-    console.log('clicked',this)
-    var text09=$('input[name="09"]').val()
-    console.log(text09)
-    localStorage.setItem(0900,text09)
-    area09.innerHtml=localStorage.getItem(0900)
+// btn09.click(function(){
+//     console.log('clicked',this)
+//     var inputVal=$('input[name="09"]').val()
+//     console.log(inputVal)
+//     localStorage.setItem(0900,text09)
+//     inputVal.innerHtml=localStorage.getItem(0900)
   
+// })
+btn09.click(function(){
+
+    console.log('clicked',this)
+    let area09Input=area09.val()
+    console.log(area09)
+    localStorage.setItem(0900,area09Input)
+    
 })
+// btn09.click(function(){
+//     console.log('clicked',this)
+//     var text09=$('input[name="09"]').val()
+//     console.log(text09)
+//     localStorage.setItem(0900,text09)
+    
+// })
 
 var btn10=$('#btn10')
 console.log(btn10)
 
 btn10.click(function(){
+
     console.log('clicked',this)
-    var text10=$('input[name="10"]').val()
-    console.log(text10)
-    localStorage.setItem(1000, text10)
+    var area10Input=area10.val()
+    console.log(area09)
+    localStorage.setItem(1000, area10Input)
     area10.innerHtml=localStorage.getItem(1000)
-   
+    
+    
+})
+// btn10.click(function(){
+//     console.log('clicked',this)
+//     var text10=$('input[name="10"]').val()
+//     // var inputVal=area10.val()
+//     // console.log(inputVal)
+//     // console.log(text10)
+//     localStorage.setItem(1000, text10)
+//     area10.innerHtml=localStorage.getItem(1000)
+    
+    
+// })
 
- })
-
- var btn11=$('#btn11')
+var btn11=$('#btn11')
 console.log(btn11)
 
 btn11.click(function(){
+
     console.log('clicked',this)
-    var text11=$('input[name="11"]').val()
-    console.log(text11)
-    
-    localStorage.setItem(1100, text11)
+    var area11Input=area10.val()
+    console.log(area11Input)    
+    localStorage.setItem(1100, area11Input)
     area11.innerHtml=localStorage.getItem(1100)
-   
+    
 })
 
 var btn12=$('#btn12')
 console.log(btn12)
 
-btn12.click(function(event){
+btn12.click(function(){
+
     console.log('clicked',this)
-    var text12=$('input[name="12"]').val()
-    console.log(text12)
-    localStorage.setItem(1200, text12)
+    var area12Input=area12.val()
+    console.log(area12Input)
+    localStorage.setItem(1200, area12Input)
     area12.innerHtml=localStorage.getItem(1200)
     
 })
@@ -107,11 +150,12 @@ btn12.click(function(event){
 var btn13=$('#btn13')
 console.log(btn13)
 
-btn13.click(function(event){
+btn13.click(function(){
+  
     console.log('clicked',this)
-    var text13=$('input[name="13"]').val()
-    console.log(text13)
-    localStorage.setItem(1300, text13)
+    var area13Input=area13.val()
+    console.log(area13Input)
+    localStorage.setItem(1300, area13Input)
     area13.innerHtml=localStorage.getItem(1300)
     
 })
@@ -119,24 +163,25 @@ btn13.click(function(event){
 var btn14=$('#btn14')
 console.log(btn14)
 
-btn14.click(function(event){
-    console.log('clicked',this)
-    var text14=$('input[name="14"]').val()
-    console.log(text14)
-    localStorage.setItem(1400, text14)
-    area14.innerHtml=localStorage.getItem(1400)
+btn14.click(function(){
     
+    console.log('clicked',this)
+    var area14Input=area14.val()
+    console.log(area14Input)
+    localStorage.setItem(1400, area12Input)
+    area14.innerHtml=localStorage.getItem(1400)
 })
 
 var btn15=$('#btn15')
 console.log(btn15)
 
-btn15.click(function(event){
+btn15.click(function(){
+   
     console.log('clicked',this)
-    var text15=$('input[name="15"]').val()
-    console.log(text15)
-     localStorage.setItem(1500, text15)
-     area15.innerHtml=localStorage.getItem(1500)
+    var area15Input=area15.val()
+    console.log(area15Input)
+    localStorage.setItem(1500, area15Input)
+    area15.innerHtml=localStorage.getItem(1500)
     
 })
 
@@ -144,47 +189,34 @@ var btn16=$('#btn16')
 console.log(btn16)
 
 
-btn16.click(function(event){
+btn16.click(function(){
+  
     console.log('clicked',this)
-    var text16=$('input[name="16"]').val()
-    console.log(text16)
-    localStorage.setItem(1600, text16)
+    var area16Input=area16.val()
+    console.log(area16Input)
+    localStorage.setItem(1600, area12Input)
     area16.innerHtml=localStorage.getItem(1600)
-   
+    
 })
 
 var btn17=$('#btn17')
 console.log(btn17)
 
-btn17.click(function(event){
+btn17.click(function(){
     console.log('clicked',this)
-    var text17=$('input[name="17"]').val()
-    console.log(text17)
-    localStorage.setItem(1700, text17)
+    var area17Input=area17.val()
+    console.log(area17Input)
+    localStorage.setItem(1700, area17Input)
     area17.innerHtml=localStorage.getItem(1700)
-    console.log()
+
 })
-
-// area10V.innerHtml=localStorage.getItem(1000)
-//     area09.innerText=area10V
-
-// function handleSubmit(event){
-//     // event.preventDefault()
-//     console.log(listInput)
-// }
-
-// console.log(listInput)
-// let blockValue=listInput.value()
-// console.log(blockValue)
+// let onPage09=area09.innerHtml.localStorage.getItem(0900)
+let onPage09= localStorage.getItem(0900)
+console.log(onPage09)
+area09.innerHtml=onPage09
+console.log(area09.innerHtml)
+//??CLEAR OUT INPUTS 
+//  $('input[type="text"}').val('') 
+// area09.append(onPage09)
 
 
-
-
-//$('<h3>').text(moment).appendTo('currentDay')
-//console.log(h3)
-
-// var h3= document.createElement('h3')
-// h3.textContent=momentTime
-// console.log(h3)
-// console.log(momentTime)
-// document.body.appendChild[2](h3)
