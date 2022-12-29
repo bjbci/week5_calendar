@@ -51,7 +51,7 @@ for (let i=0; i<9;i++){
    
     console.log(momentHour)
     console.log(calendarTime)
-    momentHour=11
+
 
 
     if (momentHour==calendarTime){

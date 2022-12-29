@@ -11,7 +11,7 @@ I learned how to use and adapt bootstrap applications and how to use and manipul
 This app is used by deploying it in the web browser
 
 ## How is this different
-This app is different because the blocks in the calendar change colors depending on if thee appointment is upcoming or past
+This app is different because the blocks in the calendar change colors depending on if the appointment is upcoming or past
 
 
 
