@@ -48,15 +48,24 @@ for (let i=0; i<9;i++){
     calendarTime=inputAreas[i].name
     console.log(calendarTime)
 
+   
+    console.log(momentHour)
+    console.log(calendarTime)
+    momentHour=11
+
+
     if (momentHour==calendarTime){
         console.log('time is now')
-        inputAreas.attr("style","background-color:red")
+        inputAreas[i].style.backgroundColor="red"
+        // inputAreas[i].attr("style","background-color:red")
     }else if (momentHour > calendarTime){
         console.log('time has passed')
-        inputAreas.attr("style","background-color:grey")
+        inputAreas[i].style.backgroundColor="grey"
+        // inputAreas[i].attr("style","background-color:grey")
     }else {
         console.log('the futrue is coming')
-        inputAreas.attr("style","background-color:green")
+        inputAreas[i].style.backgroundColor="green"
+        // inputAreas[i].attr("style","background-color:green")
     }
 
 }
